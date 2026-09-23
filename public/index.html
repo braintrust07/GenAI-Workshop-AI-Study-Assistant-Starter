@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Study Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="header">
+      <h1>AI Study Assistant</h1>
+      <p class="sub">Type a question below. The assistant explains it</p>
+    </header>
+
+    <section class="panel">
+      <label for="question" class="field-label">Your question</label>
+      <textarea id="question" rows="3" placeholder="e.g. What's the difference between RAG and fine-tuning?"></textarea>
+
+      <div class="actions">
+        <button id="askBtn" type="button">Ask</button>
+        <span id="status" class="status" aria-live="polite"></span>
+      </div>
+
+      <div id="answerBox" class="answer-box" hidden>
+        <p class="field-label">Answer</p>
+        <p id="answerText"></p>
+      </div>
+    </section>
+
+    <!-- STEP 6: Quiz generation (optional feature) -->
+    <section class="panel panel-quiz" id="quizPanel" hidden>
+      <label for="topic" class="field-label">Generate a quiz on a topic</label>
+      <div class="quiz-row">
+        <input id="topic" type="text" placeholder="e.g. Embeddings" />
+        <button id="quizBtn" type="button">Generate quiz</button>
+      </div>
+      <ol id="quizList" class="quiz-list"></ol>
+    </section>
+
+    <footer class="footer">
+      <p>Built live in the GenAI 360° workshop.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
